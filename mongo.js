@@ -7,9 +7,16 @@ const database = 'youtube';
 const getData = async ()=>{
     let result = await client.connect();
     let db = result.db(database)
-    const collection = db.collection('videos')
-    const response = await collection.find({}).toArray()
-    console.log(response);
+    return  db.collection('videos')
+    // const response = await collection.find({}).toArray()
+    // console.log(response);
 }
 
-getData()
+// console.log(getData()); 
+
+// getData().then((resp)=>{
+//     resp.find().toArray().then((data)=>{
+//         console.log(data);
+//     });
+// })
+module.exports= getData
